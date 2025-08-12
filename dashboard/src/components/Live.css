@@ -1,0 +1,330 @@
+/* Base styles */
+.live-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #f5f5f5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.market-status {
+  padding: 8px 16px;
+  text-align: center;
+  font-weight: bold;
+  background-color: #e0e0e0;
+}
+
+.market-status[data-status="open"] {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.market-status[data-status="closed"] {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.market-timer {
+  margin-left: 10px;
+  font-weight: normal;
+  font-size: 0.9em;
+}
+
+.live-grid {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  grid-template-rows: auto 1fr;
+  gap: 16px;
+  padding: 16px;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.chart-section {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.stock-list-section {
+  grid-column: 2;
+  grid-row: 1;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.market-overview {
+  grid-column: 2;
+  grid-row: 2;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 16px;
+  overflow-y: auto;
+}
+
+/* Chart header styles */
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.time-range-selector {
+  display: flex;
+  gap: 8px;
+}
+
+.time-range-selector button {
+  padding: 4px 8px;
+  border: 1px solid #ddd;
+  background: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.time-range-selector button.active {
+  background-color: #2962ff;
+  color: white;
+  border-color: #2962ff;
+}
+
+/* Price display styles */
+.price-display {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.current-price {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.price-change {
+  font-size: 16px;
+}
+
+.price-change.positive {
+  color: #2e7d32;
+}
+
+.price-change.negative {
+  color: #c62828;
+}
+
+.volume {
+  color: #666;
+  font-size: 14px;
+}
+
+/* Chart container */
+.chart-container {
+  flex-grow: 1;
+  min-height: 300px;
+}
+
+/* Stock list styles */
+.stock-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stock-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.stock-item:hover {
+  background-color: #f0f0f0;
+}
+
+.stock-item.selected {
+  background-color: #e3f2fd;
+}
+
+.stock-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.stock-symbol {
+  font-weight: bold;
+}
+
+.stock-name {
+  font-size: 12px;
+  color: #666;
+}
+
+.stock-price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.watchlist-btn {
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+.watchlist-btn:hover {
+  background-color: #f0f0f0;
+}
+
+/* Market overview styles */
+.indices {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.index-card {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+}
+
+.index-name {
+  font-weight: bold;
+}
+
+.index-value {
+  font-family: monospace;
+}
+
+.index-change.positive {
+  color: #2e7d32;
+}
+
+.index-change.negative {
+  color: #c62828;
+}
+
+.market-news ul {
+  padding-left: 20px;
+}
+
+.market-news li {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+/* Quick trade panel */
+.quick-trade-panel {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+  z-index: 100;
+}
+
+.trade-stock-info {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.trade-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.buy-btn, .sell-btn, .chart-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.buy-btn {
+  background-color: #4caf50;
+  color: white;
+}
+
+.sell-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.chart-btn {
+  background-color: #2196f3;
+  color: white;
+}
+
+.select-stock-prompt {
+  color: #666;
+  font-style: italic;
+}
+
+/* Loading state */
+.loading {
+  padding: 16px;
+  text-align: center;
+  color: #666;
+}
+
+.no-stock-selected {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+  .live-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+
+  .chart-section {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .stock-list-section {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .market-overview {
+    grid-column: 1;
+    grid-row: 3;
+  }
+}
