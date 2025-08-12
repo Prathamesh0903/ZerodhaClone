@@ -1,0 +1,117 @@
+Bootstrap
+
+->firstr do cdn
+->we use inbuilt classes of bootstrap
+
+classes and uses
+1]container ->it contains all the content
+2]row ->gives row 
+3]col->gives 12 column within a row  
+4]m->margin ,mb->margin bottom,  mt->margin top,
+p->padding ...
+
+5]fs->font size fs-5 means 1 rem bootstrap gives size from 1 to 6 1 is largest and 6 is smallest
+
+6]mx->horizontal margin x-axis  my->vertical margin
+ y-axis
+7]text-center->txt center
+
+8]container-fluid-> to remove margin property	
+
+
+
+React
+
+setting up routing for react
+1] npm i react-router-dom
+2] in index.js import ->import {BrowserRouter, Routes, Route} from "react-router-dom"
+3]remove the strictmode code and all its inside part and write:
+      <BrowserRouter>
+     
+</BrowserRouter>
+BrowserRouter is a container or wrapper used for routing inside it all the links are specified inside <Routes></Routes> in <Route></Route>
+
+to write our first route -> <Route path="/" element={<HomePage/>}></Router>
+element->destination path->
+
+Eg-> in navbar after clicking the links if we want to route on given link ,first import ->import {Link} from "react-router-dom" ;
+and then wherever a tag is there change tag to <Link> tag and instead of href put to="/signup"
+
+
+
+**Zeroda project/dashboard/src/Components/Menu.js madla explaination below
+
+ useState->
+     1]first import useState in The Menu.js
+     2]we are using this to handle the navbar on the dashboard i.e to identify what link is currently selected as per index and to use profile dropdown at right corner (initially false after clicking it becomes true and dropdown  comes)
+
+
+
+
+
+
+
+
+
+**MongoDB
+1]creating mongodb account(it automatically creates our organization which is visible on RHS of Atlas link	) -> click atlas and then create new project ->then create cluster
+
+Username: ZerodhaClone
+Password: Prathamesh@0903
+
+
+
+//////////////////////////////////
+
+**in Backend directory
+1]npm init      ->to initialize express(backend) 
+2]npm i -D nodemon -> -D->it is for getting Developer Dependency
+
+3]npm i express body-parser
+
+body-parser-> it is a pkg used to work on data which is going to come and go from API
+
+cors ->Cross Origin Resource Sharing is used for establishing communication between react App and backend
+
+dotenv-> to hide the database credentials so that it is not publically visible
+
+mongoose-> to connect with database
+
+passport->it is used for signup, login for authentication purpose
+
+passport-local
+
+passport-local-mongoosenpm
+
+//steps for connection db
+  
+// 1]create .env file -> it is a hidden file used to hide private information
+->2]here in .env file we will store mongoDB URL  which we have got from url->(in mongodb go to db in that go to clusters click on connect copy the url ) 
+
+->in url you have to write your <password>of db and and give a collection name in ->(.net/zerodha?) here zerodha is collection name
+
+
+**
+Schema creation
+-> while creating schema we generally write 
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
+so instead we can write
+->const { Schema } = require("mongoose");
+ this destructures schema from mongoose , it allows us to create schema without importing entire mongoose object
+
+
+
+
+
+
+
+
+
+
+
+***Routes
+app.get -> to fetch data from db
+
+app.post ->when we want input from user we use post eg if we want to send email credential of user to backend we use post ///////////////////////////////////////////////////////////////
+
